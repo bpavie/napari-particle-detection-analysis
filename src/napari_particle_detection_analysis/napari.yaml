@@ -8,15 +8,21 @@ contributions:
     - id: napari-particle-detection-analysis.write_single_image
       python_name: napari_particle_detection_analysis._writer:write_single_image
       title: Save image data with Particle Detection & Analysis
-    - id: napari-particle-detection-analysis.make_qwidget
-      python_name: napari_particle_detection_analysis._widget:ExampleQWidget
-      title: Make example QWidget
-    - id: napari-particle-detection-analysis.make_magic_widget
-      python_name: napari_particle_detection_analysis._widget:example_magic_widget
-      title: Make example magic widget
-    - id: napari-particle-detection-analysis.make_func_widget
-      python_name: napari_particle_detection_analysis._widget:example_function_widget
-      title: Make example function widget
+    - id: napari-particle-detection-analysis.segment_cells
+      python_name: napari_particle_detection_analysis._widget:SegmentationWidget
+      title: Segment cells in 3D
+    - id: napari-particle-detection-analysis.segment_particle
+      python_name: napari_particle_detection_analysis._widget:ParticleSegmentationWidget
+      title: Segment particle in 3D
+    - id: napari-particle-detection-analysis.analysis_cells_particles
+      python_name: napari_particle_detection_analysis._widget:ParticleCellAnalysis
+      title: Analyze cells and particles
+#    - id: napari-particle-detection-analysis.make_magic_widget
+#      python_name: napari_particle_detection_analysis._widget:example_magic_widget
+#      title: Make example magic widget
+#    - id: napari-particle-detection-analysis.make_func_widget
+#      python_name: napari_particle_detection_analysis._widget:example_function_widget
+#      title: Make example function widget
   writers:
     - command: napari-particle-detection-analysis.write_multiple
       layer_types: ['image*','labels*']
@@ -25,10 +31,14 @@ contributions:
       layer_types: ['image']
       filename_extensions: ['.npy']
   widgets:
-    - command: napari-particle-detection-analysis.make_qwidget
-      display_name: Example QWidget
-    - command: napari-particle-detection-analysis.make_magic_widget
-      display_name: Example Magic Widget
-    - command: napari-particle-detection-analysis.make_func_widget
-      autogenerate: true
-      display_name: Example Function Widget
+    - command: napari-particle-detection-analysis.segment_cells
+      display_name: Segment Cells in 3D
+    - command: napari-particle-detection-analysis.segment_particle
+      display_name: Segment Particle in 3D
+    - command: napari-particle-detection-analysis.analysis_cells_particles
+      display_name: Analyze Cells and Particle
+#    - command: napari-particle-detection-analysis.make_magic_widget
+#      display_name: Example Magic Widget
+#    - command: napari-particle-detection-analysis.make_func_widget
+#      autogenerate: true
+#      display_name: Example Function Widget
